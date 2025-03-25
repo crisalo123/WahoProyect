@@ -9,22 +9,16 @@ import { Search } from '../core/component/searchComponent/search-schema'
 import { useGetList } from '../core/services/useGetList'
 import { useState } from 'react'
 
-export const ListPage = () => {
+export const ListPage = <T,>() => {
   const [searchParams, setSearchParams] = useState<Search>()
   const { module = '' } = useParams();
   const navigate = useNavigate()
-    
-   
+   const searchId =  searchParams?.id
   
-
-
   const hadleReturn = () =>{
     navigate(-1)
   }
-  
-
-  const {dataList, isLoading} = useGetList({moduleRour: module}) 
-  console.log('dataList', dataList)
+  const {dataList, isLoading} = useGetList<T>({moduleRour: module, searchId}) 
 
 
   if(isLoading){
@@ -45,12 +39,14 @@ export const ListPage = () => {
       </Button>
     </div>
     <div> 
-    <SearchComponent  onSearch={(values) => {
+    <SearchComponent 
+     searchParams={searchParams?.id}
+     onSearch={(values) => {
        setSearchParams(values)
     }} label={module} />
     </div>
     <div className=' mt-10 md:mt-5'>
-     <ListComponent   searchParams={searchParams} />
+     <ListComponent<T> dataList={dataList} />
      </div>
   </div>
     </BaseLayout>

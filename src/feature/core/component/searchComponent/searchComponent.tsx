@@ -13,22 +13,24 @@ import { IoIosSearch } from "react-icons/io";
 type SearchComponentProps = {
  label:string | undefined
  onSearch : (values:Search) => void 
+ searchParams: string | number | undefined
 }
 
 
 
-export const SearchComponent:React.FC<SearchComponentProps> = ({label,onSearch,  }) => {
+export const SearchComponent:React.FC<SearchComponentProps> = ({label,onSearch, searchParams }) => {
 
-  const { register,  handleSubmit , formState} = useForm<Search>({
+  const { register,  handleSubmit , formState, watch} = useForm<Search>({
    resolver: zodResolver(SearchSchema)
   })
-
+    
+ 
   const { errors } = formState 
 
   const location = useLocation()
   const locationSearch = location.pathname === '/home'
 
- 
+
 
 
   return (
@@ -39,14 +41,20 @@ export const SearchComponent:React.FC<SearchComponentProps> = ({label,onSearch, 
       <form  className={`flex  ${!locationSearch ? 'flex-row-reverse' : 'flex-row' }  `} onSubmit={handleSubmit(onSearch , (errors) => console.log(errors))}>
       <div> 
       <InputField {...register('id')}
+       disabled={!!searchParams}
         type="number"
         label={locationSearch ? 'Buscar productos de interés ' : 'Buscar'}
+        defaultValue={searchParams}
         placeholder='Buscar por id'  className={`mt-[4px] mx-2 w-full ${locationSearch ?  'md:w-72' :'md:w-36'}`}
         error={errors.id?.message} />
       </div>
        <div className="mt-2" >
-        <Button type="submit" className={` ${!locationSearch ? 'w-24' : 'w-auto' }  rounded-md bg-gradient-to-b from-[#a20f5c] to-[#d53287] text-white transition-all hover:brightness-110 ` }  >
-          {!locationSearch ? 'Buscar' : <IoIosSearch className='text-white ' />}
+        <Button  
+          type={searchParams ? 'button' : 'submit'}
+          onClick={() => onSearch({id: ''})}
+        className={` ${!locationSearch ? 'w-24' : 'w-auto' }  rounded-md bg-gradient-to-b from-[#a20f5c] to-[#d53287] text-white transition-all hover:brightness-110 ` }  >
+          {searchParams ?  'Limpiar': 'Buscar'}
+          {/* {!locationSearch ? 'Buscar' : <IoIosSearch className='text-white ' />} */}
         </Button>
        </div>
       </form> 
