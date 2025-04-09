@@ -26,7 +26,7 @@ export function LoginPage() {
   const { isAuthenticated } = useAuthStore()
 
   const handleSuccess = (values: AuthValues): void => {
-    login(values, )
+    login(values)
   
     }
 

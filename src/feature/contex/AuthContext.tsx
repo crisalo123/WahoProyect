@@ -80,6 +80,7 @@ const useAuthProvider = (): AuthContextValue => {
       roleId: '1',
       token: uuidv4(),
      }
+     localStorage.setItem('user', values.numberIdentification)
       authStore.login({ ...mockUser });
      callback?.()
     } catch (error) {

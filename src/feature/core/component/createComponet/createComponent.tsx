@@ -6,12 +6,11 @@ import { Button } from "../../ui";
 import { InputField } from "../../ui/InputField";
 import { CiSaveDown1 } from "react-icons/ci";
 import { ImCancelCircle } from "react-icons/im";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { serviceSchemas } from "./createDinamicShema";
-import { arrayModules } from "../../const/modules";
-import { postList } from "../../services/createDocumentService";
-import Swal from 'sweetalert2';
-import 'sweetalert2/dist/sweetalert2.min.css';
+import { useCreateData } from "./useCreateData";
+
+
 
 
 type CreateComponentProps = {
@@ -19,13 +18,14 @@ type CreateComponentProps = {
 };
 
 export const CreateComponent: React.FC<CreateComponentProps> = ({ label }) => {
+
+
   if (!label || !serviceSchemas[label]) {
     return <div>Error: No se encontró un esquema para "{label}"</div>;
   }
-  const navigate = useNavigate()
-  const originalSchema = serviceSchemas[label];
-  const schema = originalSchema.omit({ fechaAdd: true, usuarioAdd: true });
 
+  const { schema, postCreateForm } = useCreateData({ label   });
+ 
   type FormValues = z.infer<typeof schema>;
 
   const {
@@ -50,42 +50,12 @@ export const CreateComponent: React.FC<CreateComponentProps> = ({ label }) => {
 
   const handleReset = () => {
     reset(); 
-
-    
   };
 
-  const newUrlGet = arrayModules.find(module => module.name === label)
-  const paramFilter = newUrlGet?.pathPost
+ 
 
 
-  const postCreateForm = async (data: FormValues) =>{
-    try {
-      const finalData = {
-        ...data,
-        fechaAdd: new Date().toISOString(),
-        usuarioAdd: "usuario_predeterminado", 
-      }
-
-       await postList<FormValues>(finalData, paramFilter as string);
-       const result = await Swal.fire({
-        title: "Creación exitosa",
-        text: `El ${label} se ha creado correctamente.`,
-        icon: "success",
-        confirmButtonText: "Aceptar",
-      });
-  
-      if (result.isConfirmed) {
-        navigate(`/home/${label}/listarPage`);
-      }
-    } catch (error) {
-      Swal.fire({
-        title: "Ups!",
-        text: `Error al crear el ${label}. Por favor, tenemos problemas con el servidor`,
-        icon: "error",
-      });
-    }
-  }
-
+ 
   const onSubmit = async (data: FormValues) => {
      postCreateForm(data)
   };
