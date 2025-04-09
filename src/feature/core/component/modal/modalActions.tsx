@@ -26,7 +26,7 @@ export const ModalActions:React.FC<ModalProps> = ({showModal, onSucces, title, i
                 </div>
                 <div>
                   <h1 className='font-bold text-[34px] text-primary ml-6'>
-                    Crédito
+                    Registro 
                   </h1>
                 </div>
               </div>
@@ -38,7 +38,7 @@ export const ModalActions:React.FC<ModalProps> = ({showModal, onSucces, title, i
             </div>
             <div>
               <span className='flex justify-center mt-6 mb-6'>
-                ¡El registro se ha eliminado con éxito!
+                ¡Criterios creados correctamente!
               </span>
             </div>
 
