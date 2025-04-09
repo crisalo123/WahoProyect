@@ -11,11 +11,12 @@ export const CreatePage = () => {
 
   const handleReturn = () =>{
     navigate(-1)
-  }
+  } 
+
+  
   return (
     <BaseLayout
         header
-       
         
       > 
    <div className='p-10'>

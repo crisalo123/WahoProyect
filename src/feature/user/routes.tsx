@@ -1,3 +1,4 @@
+import { ListProvider } from '../core/context/listContext'
 import { CustomRouteObject } from '../core/types/routes'
 import { lazyImport } from '../core/utils/lazyImport'
 
@@ -37,7 +38,12 @@ const adminRoutes: CustomRouteObject[] = [
   {
     name: '',
     path: '/home/:module/listarPage',
-    element: <ListPage />
+    element: (
+      <ListProvider> 
+    <ListPage />
+    </ListProvider> 
+  )
+
   },
 
   {

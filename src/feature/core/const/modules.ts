@@ -2,171 +2,205 @@ export const arrayModules = [
   {
     id: 1,
     name: "Calificación",
-    pathGet: 'Calificacion/ListCalificacion'
+    pathGet: "Calificacion/ListCalificacion",
+    pathPost: "Calificacion/CreateCalificacion"
   },
   {
     id: 2,
     name: "Catalogo",
-    pathGet: 'Catalogo/ListCatalogo'
+    pathGet: "Catalogo/ListCatalogo",
+    pathPost: "Catalogo/CreateCatalogo"
   },
   {
     id: 3,
     name: "CategoriaLog",
-    pathGet: 'CategoriaLog/ListCategoriaLog'
+    pathGet: "CategoriaLog/ListCategoriaLog",
+    pathPost: "CategoriaLog/CreateCategoriaLog"
   },
   {
     id: 4,
     name: "CategoriaProducto",
-    pathGet: 'CategoriaProducto/ListCategoriaProducto'
+    pathGet: "CategoriaProducto/ListCategoriaProducto",
+    pathPost: "CategoriaProducto/CreateCategoriaProducto"
   },
   {
     id: 5,
     name: "Chat",
-    pathGet: 'Chat/ListChat'
+    pathGet: "Chat/ListChat",
+    pathPost: "Chat/CreateChat"
   },
   {
     id: 6,
     name: "Ciudad",
-    pathGet: 'Ciudad/ListCiudad'
+    pathGet: "Ciudad/ListCiudad",
+    pathPost: "Ciudad/CreateCiudad"
   },
   {
     id: 7,
     name: "CriterioEvaluación",
-    pathGet: 'CriterioEvaluacion/ListCriterioEvaluacion'
+    pathGet: "CriterioEvaluacion/ListCriterioEvaluacion",
+    pathPost: "CriterioEvaluacion/CreateCriterioEvaluacion"
   },
   {
     id: 8,
     name: "Departamento",
-    pathGet: 'Departamento/ListDepartamento'
+    pathGet: "Departamento/ListDepartamento",
+    pathPost: "Departamento/CreateDepartamento"
   },
   {
     id: 9,
     name: "Día",
-    pathGet: 'Dia/ListDia'
+    pathGet: "Dia/ListDia",
+    pathPost: "Dia/CreateDia"
   },
   {
     id: 10,
     name: "Domicilio",
-    pathGet: 'Domicilio/ListDomicilio'
+    pathGet: "Domicilio/ListDomicilio",
+    pathPost: "Domicilio/CreateDomicilio"
   },
   {
     id: 11,
     name: "Entidad",
-    pathGet: 'Entidad/ListEntidad'
+    pathGet: "Entidad/ListEntidad",
+    pathPost: "Entidad/CreateEntidad"
   },
   {
     id: 12,
     name: "Estado",
-    pathGet: 'Estado/ListEstado'
+    pathGet: "Estado/ListEstado",
+    pathPost: "Estado/CreateEstado"
   },
   {
     id: 13,
     name: "FaseDomicilio",
-    pathGet: 'FaseDomicilio/ListFaseDomicilio'
+    pathGet: "FaseDomicilio/ListFaseDomicilio",
+    pathPost: "FaseDomicilio/CreateFaseDomicilio"
   },
   {
     id: 14,
     name: "Horario",
-    pathGet: 'Horario/ListHorario'
+    pathGet: "Horario/ListHorario",
+    pathPost: "Horario/CreateHorario"
   },
   {
     id: 15,
     name: "Item",
-    pathGet: 'Item/ListItem'
+    pathGet: "Item/ListItem",
+    pathPost: "Item/CreateItem"
   },
   {
     id: 16,
     name: "Log",
-    pathGet: 'Log/ListLog'
+    pathGet: "Log/ListLog",
+    pathPost: "Log/CreateLog"
   },
   {
     id: 17,
     name: "MedioPago",
-    pathGet: 'MedioPago/ListMedioPago'
+    pathGet: "MedioPago/ListMedioPago",
+    pathPost: "MedioPago/CreateMedioPago"
   },
   {
     id: 18,
     name: "Modulo",
-    pathGet: 'Modulo/ListModulo'
+    pathGet: "Modulo/ListModulo",
+    pathPost: "Modulo/CreateModulo"
   },
   {
     id: 19,
     name: "Notificación",
-    pathGet: 'Notificacion/ListNotificacion'
+    pathGet: "Notificacion/ListNotificacion",
+    pathPost: "Notificacion/CreateNotificacion"
   },
   {
     id: 20,
     name: "País",
-    pathGet: 'Pais/ListPais'
+    pathGet: "Pais/ListPais",
+    pathPost: "Pais/CreatePais"
   },
   {
     id: 21,
     name: "ParametroEvaluacion",
-    pathGet: 'ParametroEvaluacion/ListParametroEvaluacion'
+    pathGet: "ParametroEvaluacion/ListParametroEvaluacion",
+    pathPost: "ParametroEvaluacion/CreateParametroEvaluacion"
   },
   {
     id: 22,
     name: "Permiso",
-    pathGet: 'Permiso/ListPermiso'
+    pathGet: "Permiso/ListPermiso",
+    pathPost: "Permiso/CreatePermiso"
   },
   {
     id: 23,
     name: "Producto",
-    pathGet: 'Producto/ListProducto'
+    pathGet: "Producto/ListProducto",
+    pathPost: "Producto/CreateProducto"
   },
   {
     id: 24,
     name: "Promoción",
-    pathGet: 'Promocion/ListPromocion'
+    pathGet: "Promocion/ListPromocion",
+    pathPost: "Promocion/CreatePromocion"
   },
   {
     id: 25,
     name: "Rol",
-    pathGet: 'Rol/ListRol'
+    pathGet: "Rol/ListRol",
+    pathPost: "Rol/CreateRol"
   },
   {
     id: 26,
     name: "Saldo",
-    pathGet: 'Saldo/ListSaldo'
+    pathGet: "Saldo/ListSaldo",
+    pathPost: "Saldo/CreateSaldo"
   },
   {
     id: 27,
     name: "TiempoFase",
-    pathGet: 'TiempoFase/ListTiempoFase'
+    pathGet: "TiempoFase/ListTiempoFase",
+    pathPost: "TiempoFase/CreateTiempoFase"
   },
   {
     id: 28,
     name: "TipoEntidad",
-    pathGet: 'TipoEntidad/ListTipoEntidad'
+    pathGet: "TipoEntidad/ListTipoEntidad",
+    pathPost: "TipoEntidad/CreateTipoEntidad"
   },
   {
     id: 29,
     name: "TipoIdentificación",
-    pathGet: 'TipoIdentificacion/ListTipoIdentificacion'
+    pathGet: "TipoIdentificacion/ListTipoIdentificacion",
+    pathPost: "TipoIdentificacion/CreateTipoIdentificacion"
   },
   {
     id: 30,
     name: "TipoPQRS",
-    pathGet: 'TipoPQRS/ListTipoPQRS'
+    pathGet: "TipoPQRS/ListTipoPQRS",
+    pathPost: "TipoPQRS/CreateTipoPQRS"
   },
   {
     id: 31,
     name: "TipoPromoción",
-    pathGet: 'TipoPromocion/ListTipoPromocion'
+    pathGet: "TipoPromocion/ListTipoPromocion",
+    pathPost: "TipoPromocion/CreateTipoPromocion"
   },
   {
     id: 32,
     name: "TipoTransacción",
-    pathGet: 'TipoTransaccion/ListTipoTransaccion'
+    pathGet: "TipoTransaccion/ListTipoTransaccion",
+    pathPost: "TipoTransaccion/CreateTipoTransaccion"
   },
   {
     id: 33,
     name: "Transacción",
-    pathGet: 'Transaccion/ListTransaccion'
+    pathGet: "Transaccion/ListTransaccion",
+    pathPost: "Transaccion/CreateTransaccion"
   },
   {
     id: 34,
     name: "Usuario",
-    pathGet: 'Usuario/ListUsuario'
+    pathGet: "Usuario/ListUsuario",
+    pathPost: "Usuario/CreateUsuario"
   }
 ];

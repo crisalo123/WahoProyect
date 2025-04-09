@@ -19,6 +19,7 @@ export const ListPage = <T,>() => {
     navigate(-1)
   }
   const {dataList, isLoading} = useGetList<T>({moduleRour: module, searchId}) 
+  
 
 
   if(isLoading){
@@ -29,7 +30,7 @@ export const ListPage = <T,>() => {
   return (
     <BaseLayout
     header
-   
+
     
   >
   <div className="p-10"> 

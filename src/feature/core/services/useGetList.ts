@@ -27,7 +27,7 @@ export const useGetList = <T>({ moduleRour ,searchId }: Props) => {
           filterParams[paramsFilterSpl] = searchId;
         }
         const resp = await getList<T>(filterParams as unknown as T, newUrlGet?.pathGet as string);
-            setDataList(resp);
+       setDataList(resp);
         setDataList(resp)
        } catch (error) {
         

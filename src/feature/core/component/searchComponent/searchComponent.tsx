@@ -20,7 +20,7 @@ type SearchComponentProps = {
 
 export const SearchComponent:React.FC<SearchComponentProps> = ({label,onSearch, searchParams }) => {
 
-  const { register,  handleSubmit , formState, watch} = useForm<Search>({
+  const { register,  handleSubmit , formState} = useForm<Search>({
    resolver: zodResolver(SearchSchema)
   })
     
@@ -46,13 +46,14 @@ export const SearchComponent:React.FC<SearchComponentProps> = ({label,onSearch, 
         label={locationSearch ? 'Buscar productos de interés ' : 'Buscar'}
         defaultValue={searchParams}
         placeholder='Buscar por id'  className={`mt-[4px] mx-2 w-full ${locationSearch ?  'md:w-72' :'md:w-36'}`}
-        error={errors.id?.message} />
+        error={searchParams ? ''  : errors.id?.message} />
       </div>
        <div className="mt-2" >
         <Button  
+        
           type={searchParams ? 'button' : 'submit'}
-          onClick={() => onSearch({id: ''})}
-        className={` ${!locationSearch ? 'w-24' : 'w-auto' }  rounded-md bg-gradient-to-b from-[#a20f5c] to-[#d53287] text-white transition-all hover:brightness-110 ` }  >
+          onClick={ searchParams ? () => onSearch({id: ''}) : undefined}
+           className={` ${!locationSearch ? 'w-24' : 'w-auto' }  rounded-md bg-gradient-to-b from-[#a20f5c] to-[#d53287] text-white transition-all hover:brightness-110 ` }  >
           {searchParams ?  'Limpiar': 'Buscar'}
           {/* {!locationSearch ? 'Buscar' : <IoIosSearch className='text-white ' />} */}
         </Button>
